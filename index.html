@@ -32,15 +32,15 @@
         <div class="grid grid-cols-3 gap-4">
             <div class="p-5 w-[360px] border border-[#F1F2F4] bg-[#FFFFFF] rounded-xl">
                 <p class="font-medium text-[14px] text-[#323B49] mb-2">Total</p>
-                <p class="font-bold text-2xl text-[#002C5C]">0</p>
+                <p id="total-count" class="font-bold text-2xl text-[#002C5C]">0</p>
             </div>
             <div class="p-5 w-[360px] border border-[#F1F2F4] bg-[#FFFFFF] rounded-xl">
                 <p class="font-medium text-[14px] text-[#323B49] mb-2">Interview</p>
-                <p class="font-bold text-2xl text-[#10B981]">0</p>
+                <p id="interview-count" class="font-bold text-2xl text-[#10B981]">0</p>
             </div>
             <div class="p-5 w-[360px] border border-[#F1F2F4] bg-[#FFFFFF] rounded-xl">
                 <p class="font-medium text-[14px] text-[#323B49] mb-2">Rejected</p>
-                <p class="font-bold text-2xl text-[#EF4444]">0</p>
+                <p id="rejected-count" class="font-bold text-2xl text-[#EF4444]">0</p>
             </div>
         </div>
         <hr class="my-10 text-[#E6E7E9]">
@@ -53,16 +53,16 @@
                         <div class="text-[#64748B] font-medium">0 Jobs</div>
                     </div>
                     <div class="mb-4">
-                        <button class="btn btn-primary px-[32px] mr-2">All</button>
-                        <button class="btn text-[#64748B] mr-2">Interview</button>
-                        <button class="btn text-[#64748B]">Rejected</button>
+                        <button id="btn-all-filter" class="btn btn-primary px-[32px] mr-2">All</button>
+                        <button id="btn-interview-filter" class="btn text-[#64748B] mr-2">Interview</button>
+                        <button id="btn-rejected-filter" class="btn text-[#64748B]">Rejected</button>
                     </div>
                 </div>
             </section>
 
             <!-- All company section  -->
-            <section>
-                <div class="bg-[#FFFFFF] p-6 rounded-md flex justify-between">
+            <section id="all-jobs" class="mb-20 space-y-5">
+                <div class="bg-[#FFFFFF] p-6 rounded-md flex justify-between job-card">
                     <div>
                         <h3 class="mb-1 text-[#002C5C] text-[18px] font-semibold leading-7">Mobile First Corp</h3>
                         <p class="mb-5 text-[#64748B] leading-6">React Native Developer</p>
@@ -71,7 +71,7 @@
                             Full-time
                             •
                             $130,000 - $175,000</p>
-                        <p class="btn mb-2">Not Applied</p>
+                        <p class="status-btn btn mb-2">Not Applied</p>
                         <p class="mb-5 text-[#323B49] text-[14px] leading-5">Build cross-platform mobile applications
                             using React Native. Work on products used by millions of users worldwide.</p>
                         <div>
@@ -79,9 +79,12 @@
                             <button class="btn btn-outline btn-secondary">Rejected</button>
                         </div>
                     </div>
-                    <div><i class="fa-regular fa-trash-can"></i></div>
+                    <div>
+                        <button class="btn-delete btn btn-ghost rounded-full"><i class="fa-regular fa-trash-can"></i></button>
+
+                    </div>
                 </div>
-                <div class="bg-[#FFFFFF] p-6 rounded-md flex justify-between">
+                <div class="bg-[#FFFFFF] p-6 rounded-md flex justify-between job-card">
                     <div>
                         <h3 class="mb-1 text-[#002C5C] text-[18px] font-semibold leading-7">WebFlow Agency</h3>
                         <p class="mb-5 text-[#64748B] leading-6">Web Designer & Developer</p>
@@ -90,7 +93,7 @@
                             Part-time
                             •
                             $80,000 - $120,000</p>
-                        <p class="btn mb-2">Not Applied</p>
+                        <p class="btn mb-2 status-btn">Not Applied</p>
                         <p class="mb-5 text-[#323B49] text-[14px] leading-5">Create stunning web experiences for
                             high-profile clients. Must have portfolio and experience with modern web design trends.</p>
                         <div>
@@ -98,9 +101,11 @@
                             <button class="btn btn-outline btn-secondary">Rejected</button>
                         </div>
                     </div>
-                    <div><i class="fa-regular fa-trash-can"></i></div>
+                    <div>
+                        <button class="btn-delete btn btn-ghost rounded-full"><i class="fa-regular fa-trash-can"></i></button>
+                    </div>
                 </div>
-                <div class="bg-[#FFFFFF] p-6 rounded-md flex justify-between">
+                <div class="bg-[#FFFFFF] p-6 rounded-md flex justify-between job-card">
                     <div>
                         <h3 class="mb-1 text-[#002C5C] text-[18px] font-semibold leading-7">DataViz Solutions</h3>
                         <p class="mb-5 text-[#64748B] leading-6">Data Visualization Specialist</p>
@@ -109,7 +114,7 @@
                             Full-time
                             •
                             $125,000 - $165,000</p>
-                        <p class="btn mb-2">Not Applied</p>
+                        <p class="btn mb-2 status-btn">Not Applied</p>
                         <p class="mb-5 text-[#323B49] text-[14px] leading-5">Transform complex data into compelling
                             visualizations. Required skills: D3.js, React, and strong analytical thinking.
                         </p>
@@ -118,9 +123,11 @@
                             <button class="btn btn-outline btn-secondary">Rejected</button>
                         </div>
                     </div>
-                    <div><i class="fa-regular fa-trash-can"></i></div>
+                    <div>
+                        <button class="btn-delete btn btn-ghost rounded-full"><i class="fa-regular fa-trash-can"></i></button>
+                    </div>
                 </div>
-                <div class="bg-[#FFFFFF] p-6 rounded-md flex justify-between">
+                <div class="bg-[#FFFFFF] p-6 rounded-md flex justify-between job-card">
                     <div>
                         <h3 class="mb-1 text-[#002C5C] text-[18px] font-semibold leading-7">CloudFirst Inc</h3>
                         <p class="mb-5 text-[#64748B] leading-6">Backend Developer</p>
@@ -129,7 +136,7 @@
                             Full-time
                             •
                             $140,000 - $190,000</p>
-                        <p class="btn mb-2">Not Applied</p>
+                        <p class="btn mb-2 status-btn">Not Applied</p>
                         <p class="mb-5 text-[#323B49] text-[14px] leading-5">Design and maintain scalable backend
                             systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.
                         </p>
@@ -138,9 +145,11 @@
                             <button class="btn btn-outline btn-secondary">Rejected</button>
                         </div>
                     </div>
-                    <div><i class="fa-regular fa-trash-can"></i></div>
+                    <div>
+                        <button class="btn-delete btn btn-ghost rounded-full"><i class="fa-regular fa-trash-can"></i></button>
+                    </div>
                 </div>
-                <div class="bg-[#FFFFFF] p-6 rounded-md flex justify-between">
+                <div class="bg-[#FFFFFF] p-6 rounded-md flex justify-between job-card">
                     <div>
                         <h3 class="mb-1 text-[#002C5C] text-[18px] font-semibold leading-7">Innovation Labs</h3>
                         <p class="mb-5 text-[#64748B] leading-6">UI/UX Engineer</p>
@@ -149,7 +158,7 @@
                             Full-time
                             •
                             $110,000 - $150,000</p>
-                        <p class="btn mb-2">Not Applied</p>
+                        <p class="btn mb-2 status-btn">Not Applied</p>
                         <p class="mb-5 text-[#323B49] text-[14px] leading-5">Create beautiful and functional user
                             interfaces for our suite of products. Strong design skills and frontend development
                             expertise required.</p>
@@ -158,9 +167,11 @@
                             <button class="btn btn-outline btn-secondary">Rejected</button>
                         </div>
                     </div>
-                    <div><i class="fa-regular fa-trash-can"></i></div>
+                    <div>
+                        <button class="btn-delete btn btn-ghost rounded-full"><i class="fa-regular fa-trash-can"></i></button>
+                    </div>
                 </div>
-                <div class="bg-[#FFFFFF] p-6 rounded-md flex justify-between">
+                <div class="bg-[#FFFFFF] p-6 rounded-md flex justify-between job-card">
                     <div>
                         <h3 class="mb-1 text-[#002C5C] text-[18px] font-semibold leading-7">MegaCorp Solutions</h3>
                         <p class="mb-5 text-[#64748B] leading-6">JavaScript Developer</p>
@@ -169,7 +180,7 @@
                             Full-time
                             •
                             $130,000 - $170,00</p>
-                        <p class="btn mb-2">Not Applied</p>
+                        <p class="btn mb-2 status-btn">Not Applied</p>
                         <p class="mb-5 text-[#323B49] text-[14px] leading-5">Build enterprise applications with
                             JavaScript and modern frameworks. We offer competitive compensation, health insurance, and
                             professional development opportunities.</p>
@@ -178,9 +189,11 @@
                             <button class="btn btn-outline btn-secondary">Rejected</button>
                         </div>
                     </div>
-                    <div><i class="fa-regular fa-trash-can"></i></div>
+                    <div>
+                        <button class="btn-delete btn btn-ghost rounded-full"><i class="fa-regular fa-trash-can"></i></button>
+                    </div>
                 </div>
-                <div class="bg-[#FFFFFF] p-6 rounded-md flex justify-between">
+                <div class="bg-[#FFFFFF] p-6 rounded-md flex justify-between job-card">
                     <div>
                         <h3 class="mb-1 text-[#002C5C] text-[18px] font-semibold leading-7">StartupXYZ</h3>
                         <p class="mb-5 text-[#64748B] leading-6">Full Stack Engineer</p>
@@ -189,7 +202,7 @@
                             Full-time
                             •
                             $120,000 - $160,000</p>
-                        <p class="btn mb-2">Not Applied</p>
+                        <p class="btn mb-2 status-btn">Not Applied</p>
                         <p class="mb-5 text-[#323B49] text-[14px] leading-5">Join our fast-growing startup and work on
                             our core platform. Experience with Node.js and React required. Great benefits and equity
                             package included.</p>
@@ -198,9 +211,11 @@
                             <button class="btn btn-outline btn-secondary">Rejected</button>
                         </div>
                     </div>
-                    <div><i class="fa-regular fa-trash-can"></i></div>
+                    <div>
+                        <button class="btn-delete btn btn-ghost rounded-full"><i class="fa-regular fa-trash-can"></i></button>
+                    </div>
                 </div>
-                <div class="bg-[#FFFFFF] p-6 rounded-md flex justify-between">
+                <div class="bg-[#FFFFFF] p-6 rounded-md flex justify-between job-card">
                     <div>
                         <h3 class="mb-1 text-[#002C5C] text-[18px] font-semibold leading-7">TechCorp Industries</h3>
                         <p class="mb-5 text-[#64748B] leading-6">Senior Frontend Developer</p>
@@ -209,7 +224,7 @@
                             Full-time
                             •
                             $130,000 - $175,000</p>
-                        <p class="btn mb-2">Not Applied</p>
+                        <p class="btn mb-2 status-btn">Not Applied</p>
                         <p class="mb-5 text-[#323B49] text-[14px] leading-5">We are looking for an experienced Frontend
                             Developer to build scalable web applications using React and TypeScript. You will work with
                             a talented team on cutting-edge projects.</p>
@@ -218,7 +233,9 @@
                             <button class="btn btn-outline btn-secondary">Rejected</button>
                         </div>
                     </div>
-                    <div><i class="fa-regular fa-trash-can"></i></div>
+                    <div>
+                        <button class="btn-delete btn btn-ghost rounded-full"><i class="fa-regular fa-trash-can"></i></button>
+                    </div>
                 </div>
             </section>
         </main>
