@@ -45,6 +45,10 @@ mainList.addEventListener("click", function (event) {
     const jobDescription =
       parentNode.querySelector(".job-description").innerText;
 
+      parentNode.querySelector('.status-btn').innerText = 'Interview';
+      parentNode.querySelector('.status-btn').classList.add('btn', 'btn-outline', 'btn-accent');
+
+
     const jobObj = {
       companyName,
       jobPosition,
