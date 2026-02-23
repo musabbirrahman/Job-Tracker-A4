@@ -30,6 +30,15 @@ function toggleBtn(id) {
   const btnPrimary = document.getElementById(id);
   btnPrimary.classList.add("btn-primary");
   btnPrimary.classList.remove("text-[#64748B]");
+
+  if(id == 'btn-interview-filter'){
+    allJobsCount.classList.add('hidden');
+    filterSection.classList.remove('hidden');
+  }
+  else if(id == 'btn-all-filter'){
+    allJobsCount.classList.remove('hidden');
+    filterSection.classList.add('hidden');
+  }
 }
 
 const mainList = document.querySelector("main");
@@ -46,14 +55,14 @@ mainList.addEventListener("click", function (event) {
       parentNode.querySelector(".job-description").innerText;
 
       parentNode.querySelector('.status-btn').innerText = 'Interview';
-      parentNode.querySelector('.status-btn').classList.add('btn', 'btn-outline', 'btn-accent');
+    //   parentNode.querySelector('.status-btn').classList.add('btn', 'btn-outline', 'btn-accent');
 
 
     const jobObj = {
       companyName,
       jobPosition,
       jobInfo,
-      jobStatus,
+      jobStatus: "Interview",
       jobDescription,
     };
     
@@ -71,25 +80,25 @@ mainList.addEventListener("click", function (event) {
 
 const filterSection = document.getElementById("filter-section");
 function renderInterview() {
+    filterSection.innerHTML = ``;
 
   for (let interview of interviewArr) {
-    console.log(interview)
+    
 
-    filterSection.innerHTML = ``;
+    
     let div = document.createElement("div");
-    div.classList = "bg-[#FFFFFF] p-6 rounded-md flex justify-between job-card";
+    div.classList = "bg-[#FFFFFF] p-6 rounded-md flex justify-between job-card mb-5";
     div.innerHTML = `
                     <div>
-                        <h3 class="mb-1 text-[#002C5C] text-[18px] font-semibold leading-7 company-name">Mobile First Corp</h3>
-                        <p class="mb-5 text-[#64748B] leading-6 job-position">React Native Developer</p>
+                        <h3 class="mb-1 text-[#002C5C] text-[18px] font-semibold leading-7 company-name">${interview.companyName}</h3>
+                        <p class="mb-5 text-[#64748B] leading-6 job-position">${interview.jobPosition}</p>
                         <p class="mb-5 text-[#64748B] text-[14px] leading-5 job-info">Remote
                             •
                             Full-time
                             •
                             $130,000 - $175,000</p>
-                        <p class="status-btn btn mb-2">Not Applied</p>
-                        <p class="mb-5 text-[#323B49] text-[14px] leading-5 job-description">Build cross-platform mobile applications
-                            using React Native. Work on products used by millions of users worldwide.</p>
+                        <p class="status-btn btn mb-2">${interview.jobStatus}</p>
+                        <p class="mb-5 text-[#323B49] text-[14px] leading-5 job-description">${interview.jobDescription}</p>
                         <div>
                             <button class="btn btn-outline btn-accent btn-interview">Interview</button>
                             <button class="btn btn-outline btn-secondary btn-rejected">Rejected</button>
