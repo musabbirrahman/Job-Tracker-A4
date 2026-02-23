@@ -1,5 +1,6 @@
 let interviewArr = [];
 let rejectedArr = [];
+let currentStatus = "all";
 
 let totalCount = document.getElementById("total-count");
 let interviewCount = document.getElementById("interview-count");
@@ -28,15 +29,23 @@ function toggleBtn(id) {
   btnRejectedFilter.classList.add("text-[#64748B]");
 
   const btnPrimary = document.getElementById(id);
+
+  currentStatus = id;
+
   btnPrimary.classList.add("btn-primary");
   btnPrimary.classList.remove("text-[#64748B]");
 
   if (id == "btn-interview-filter") {
     allJobsCount.classList.add("hidden");
     filterSection.classList.remove("hidden");
+    renderInterview();
   } else if (id == "btn-all-filter") {
     allJobsCount.classList.remove("hidden");
     filterSection.classList.add("hidden");
+  } else if (id == "btn-rejected-filter") {
+    allJobsCount.classList.add("hidden");
+    filterSection.classList.remove("hidden");
+    renderRejected();
   }
 }
 
@@ -71,10 +80,16 @@ mainList.addEventListener("click", function (event) {
       interviewArr.push(jobObj);
     }
 
-    rejectedArr = rejectedArr.filter(item => item.companyName != jobObj.companyName)
+    rejectedArr = rejectedArr.filter(
+      (item) => item.companyName != jobObj.companyName,
+    );
+
+    if (currentStatus == "btn-rejected-filter") {
+      renderRejected();
+    }
 
     countCalculate();
-    renderInterview();
+    
   } else if (event.target.classList.contains("btn-rejected")) {
     const parentNode = event.target.parentNode.parentNode;
     const companyName = parentNode.querySelector(".company-name").innerText;
@@ -103,10 +118,16 @@ mainList.addEventListener("click", function (event) {
       rejectedArr.push(jobObj);
     }
 
-    interviewArr = interviewArr.filter(item => item.companyName != jobObj.companyName)
+    interviewArr = interviewArr.filter(
+      (item) => item.companyName != jobObj.companyName,
+    );
+
+    if (currentStatus == "btn-interview-filter") {
+      renderInterview();
+    }
 
     countCalculate();
-    renderRejected();
+    
   }
 });
 
