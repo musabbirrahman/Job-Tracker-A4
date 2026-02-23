@@ -71,6 +71,8 @@ mainList.addEventListener("click", function (event) {
       interviewArr.push(jobObj);
     }
 
+    rejectedArr = rejectedArr.filter(item => item.companyName != jobObj.companyName)
+
     countCalculate();
     renderInterview();
   } else if (event.target.classList.contains("btn-rejected")) {
@@ -100,6 +102,8 @@ mainList.addEventListener("click", function (event) {
     if (!jobSearch) {
       rejectedArr.push(jobObj);
     }
+
+    interviewArr = interviewArr.filter(item => item.companyName != jobObj.companyName)
 
     countCalculate();
     renderRejected();
