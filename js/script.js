@@ -74,6 +74,7 @@ mainList.addEventListener("click", function (event) {
       interviewArr.push(jobObj);
     }
 
+    countCalculate();
     renderInterview();
   }
 });
