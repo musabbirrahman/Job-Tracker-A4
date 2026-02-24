@@ -6,11 +6,21 @@ let totalCount = document.getElementById("total-count");
 let interviewCount = document.getElementById("interview-count");
 let rejectedCount = document.getElementById("rejected-count");
 let allJobsCount = document.getElementById("all-jobs");
+let currentJobsText = document.getElementById("current-jobs-count");
 
 function countCalculate() {
   totalCount.innerText = allJobsCount.children.length;
   interviewCount.innerText = interviewArr.length;
   rejectedCount.innerText = rejectedArr.length;
+
+  if(currentStatus == 'btn-all-filter' || currentStatus == 'all') {
+    currentJobsText.innerText = `${allJobsCount.children.length} Jobs`;
+  } else if(currentStatus == 'btn-interview-filter') {
+    currentJobsText.innerText = `${interviewArr.length} Jobs`;
+  }
+  else if(currentStatus == 'btn-rejected-filter') {
+    currentJobsText.innerText = `${rejectedArr.length} Jobs`;
+  }
 }
 
 countCalculate();
@@ -47,6 +57,8 @@ function toggleBtn(id) {
     filterSection.classList.remove("hidden");
     renderRejected();
   }
+
+  countCalculate();
 }
 
 const mainList = document.querySelector("main");
