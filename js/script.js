@@ -135,6 +135,20 @@ const filterSection = document.getElementById("filter-section");
 function renderInterview() {
   filterSection.innerHTML = ``;
 
+  if (interviewArr.length === 0) {
+        filterSection.innerHTML = `
+        <div class="text-center py-20 bg-white border-[#E5E7EB] rounded-lg border mx-auto mb-20">
+                <div class="mx-auto flex justify-center mb-6 text-[#7DA8FF] text-8xl">
+                    <i class="fa-solid fa-file-lines "></i>
+                </div>
+                <h3 class="text-2xl font-semibold text-[#002C5C] mb-2">No jobs available</h3>
+                <p class="text-[#64748B] text-lg">
+                    Check back soon for new job opportunities
+                </p>
+        </div>
+        `
+  }
+
   for (let interview of interviewArr) {
     let div = document.createElement("div");
     div.classList =
@@ -167,6 +181,20 @@ function renderInterview() {
 
 function renderRejected() {
   filterSection.innerHTML = ``;
+
+  if (rejectedArr.length === 0) {
+        filterSection.innerHTML = `
+        <div class="text-center py-20 bg-white border-[#E5E7EB] rounded-lg border mx-auto mb-20">
+                <div class="mx-auto flex justify-center mb-6 text-[#7DA8FF] text-8xl">
+                    <i class="fa-solid fa-file-lines "></i>
+                </div>
+                <h3 class="text-2xl font-semibold text-[#002C5C] mb-2">No jobs available</h3>
+                <p class="text-[#64748B] text-lg">
+                    Check back soon for new job opportunities
+                </p>
+        </div>
+        `
+  }
 
   for (let rejected of rejectedArr) {
     let div = document.createElement("div");
