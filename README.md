@@ -11,7 +11,8 @@
 ### 3. What is Event Bubbling? And how does it work?
 **Ans:** Event bubbling is a process where event starts in a target and go upwards to the parent and there parent.
 if I add 
-```<div id="parent">
+```
+   <div id="parent">
       <button id="child">Click Me</button>
    </div>
 ```
