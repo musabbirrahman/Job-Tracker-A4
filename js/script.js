@@ -84,6 +84,12 @@ mainList.addEventListener("click", function (event) {
       jobDescription,
     };
 
+    for (let card of allJobsCount.children) {
+      if (card.querySelector(".company-name").innerText === companyName) {
+        card.querySelector(".status-btn").innerText = "Interview";
+      }
+    }
+
     const jobSearch = interviewArr.find(
       (item) => item.companyName == jobObj.companyName,
     );
@@ -121,6 +127,12 @@ mainList.addEventListener("click", function (event) {
       jobStatus: "Rejected",
       jobDescription,
     };
+
+    for (let card of allJobsCount.children) {
+      if (card.querySelector(".company-name").innerText === companyName) {
+        card.querySelector(".status-btn").innerText = "Rejected";
+      }
+    }
 
     const jobSearch = rejectedArr.find(
       (item) => item.companyName == jobObj.companyName,
@@ -191,11 +203,7 @@ function renderInterview() {
                     <div>
                         <h3 class="mb-1 text-[#002C5C] text-[18px] font-semibold leading-7 company-name">${interview.companyName}</h3>
                         <p class="mb-5 text-[#64748B] leading-6 job-position">${interview.jobPosition}</p>
-                        <p class="mb-5 text-[#64748B] text-[14px] leading-5 job-info">Remote
-                            •
-                            Full-time
-                            •
-                            $130,000 - $175,000</p>
+                        <p class="mb-5 text-[#64748B] text-[14px] leading-5 job-info">${interview.jobInfo}</p>
                         <p class="status-btn btn mb-2">${interview.jobStatus}</p>
                         <p class="mb-5 text-[#323B49] text-[14px] leading-5 job-description">${interview.jobDescription}</p>
                         <div>
@@ -238,11 +246,7 @@ function renderRejected() {
                     <div>
                         <h3 class="mb-1 text-[#002C5C] text-[18px] font-semibold leading-7 company-name">${rejected.companyName}</h3>
                         <p class="mb-5 text-[#64748B] leading-6 job-position">${rejected.jobPosition}</p>
-                        <p class="mb-5 text-[#64748B] text-[14px] leading-5 job-info">Remote
-                            •
-                            Full-time
-                            •
-                            $130,000 - $175,000</p>
+                        <p class="mb-5 text-[#64748B] text-[14px] leading-5 job-info">${rejected.jobInfo}</p>
                         <p class="status-btn btn mb-2">${rejected.jobStatus}</p>
                         <p class="mb-5 text-[#323B49] text-[14px] leading-5 job-description">${rejected.jobDescription}</p>
                         <div>
