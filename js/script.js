@@ -128,6 +128,28 @@ mainList.addEventListener("click", function (event) {
 
     countCalculate();
     
+  } else if (event.target.closest(".btn-delete")) {
+    const deleteBtn = event.target.closest(".btn-delete");
+    const jobCard = deleteBtn.closest(".job-card");
+    const companyName = jobCard.querySelector(".company-name").innerText;
+
+    interviewArr = interviewArr.filter((item) => item.companyName !== companyName);
+    rejectedArr = rejectedArr.filter((item) => item.companyName !== companyName);
+
+    for(let card of Array.from(allJobsCount.children)) {
+      if(card.querySelector(".company-name").innerText === companyName) {
+        card.remove();
+      }
+    }
+
+    if (currentStatus === "btn-interview-filter") {
+      renderInterview();
+    }
+    else if(currentStatus === "btn-rejected-filter") {
+      renderRejected();
+    }
+
+    countCalculate();
   }
 });
 
