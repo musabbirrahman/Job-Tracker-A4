@@ -206,7 +206,7 @@ function renderInterview() {
                         <p class="mb-5 text-[#64748B] text-[14px] leading-5 job-info">${interview.jobInfo}</p>
                         <p class="status-btn btn mb-2">${interview.jobStatus}</p>
                         <p class="mb-5 text-[#323B49] text-[14px] leading-5 job-description">${interview.jobDescription}</p>
-                        <div>
+                        <div class="flex gap-1">
                             <button class="btn btn-outline btn-accent btn-interview">Interview</button>
                             <button class="btn btn-outline btn-secondary btn-rejected">Rejected</button>
                         </div>
@@ -249,7 +249,7 @@ function renderRejected() {
                         <p class="mb-5 text-[#64748B] text-[14px] leading-5 job-info">${rejected.jobInfo}</p>
                         <p class="status-btn btn mb-2">${rejected.jobStatus}</p>
                         <p class="mb-5 text-[#323B49] text-[14px] leading-5 job-description">${rejected.jobDescription}</p>
-                        <div>
+                        <div class="flex gap-1">
                             <button class="btn btn-outline btn-accent btn-interview">Interview</button>
                             <button class="btn btn-outline btn-secondary btn-rejected">Rejected</button>
                         </div>
