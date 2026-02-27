@@ -16,10 +16,10 @@ function countCalculate() {
   if(currentStatus == 'btn-all-filter' || currentStatus == 'all') {
     currentJobsText.innerText = `${allJobsCount.children.length} Jobs`;
   } else if(currentStatus == 'btn-interview-filter') {
-    currentJobsText.innerText = `${interviewArr.length} Jobs`;
+    currentJobsText.innerText = `${interviewArr.length} of ${allJobsCount.children.length} Jobs`;
   }
   else if(currentStatus == 'btn-rejected-filter') {
-    currentJobsText.innerText = `${rejectedArr.length} Jobs`;
+    currentJobsText.innerText = `${rejectedArr.length} of ${allJobsCount.children.length} Jobs`;
   }
 }
 
